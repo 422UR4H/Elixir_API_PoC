@@ -10,6 +10,7 @@ defmodule ElixirApiPoc.Application do
     children = [
       # Starts a worker by calling: ElixirApiPoc.Worker.start_link(arg)
       # {ElixirApiPoc.Worker, arg}
+      ElixirApiPoc.Users.Repo
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

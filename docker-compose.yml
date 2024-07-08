@@ -1,0 +1,17 @@
+services:
+  elixir_api_poc:
+    container_name: elixir_api_poc_postgres
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: elixir_api_poc_repo
+    # network_mode: host
+    healthcheck:
+      test: [ CMD-SHELL, pg_isready -U postgres ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
